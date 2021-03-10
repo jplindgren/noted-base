@@ -5,9 +5,6 @@ cache:
   yarn: true
   directories:
     - node_modules
-addons:
-artifacts:
-  s3_region: "sa-east-1"
 script:
   - yarn test
 before_deploy:
@@ -20,6 +17,7 @@ deploy:
   bucket: $S3_BUCKET
   skip_cleanup: true
   local-dir: dist
+  region: sa-east-1
   on:
     branch: master
 after_deploy:
