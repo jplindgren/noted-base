@@ -7,9 +7,7 @@ cache:
     - node_modules
 addons:
 artifacts:
-  s3_region: "us-east-1"
-  paths:
-    - $(git ls-files -o app/build/outputs | tr "\n" ":")
+  s3_region: "sa-east-1"
 script:
   - yarn test
 before_deploy:
